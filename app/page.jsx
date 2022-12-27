@@ -1,91 +1,89 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image";
+import people from "../public/people.jpeg";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.jsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	return (
+		<>
+			<div
+				className="hero min-h-screen"
+				style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}
+			>
+				<div className="hero-overlay bg-opacity-60"></div>
+				<div className="hero-content text-center text-neutral-content">
+					<div className="max-w-md">
+						<h1 className="mb-5 text-5xl font-bold">Home Page</h1>
+						<p className="mb-5">
+							Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+							excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+							et a id nisi.
+						</p>
+						<button className="btn-primary btn">Get Started</button>
+					</div>
+				</div>
+			</div>
+			<div className="my-3 flex justify-center">
+				<div className="stats  shadow">
+					<div className="stat">
+						<div className="stat-figure text-primary">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								className="inline-block h-8 w-8 stroke-current"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
+									d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+								></path>
+							</svg>
+						</div>
+						<div className="stat-title">Total Likes</div>
+						<div className="stat-value text-primary">25.6K</div>
+						<div className="stat-desc">21% more than last month</div>
+					</div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+					<div className="stat">
+						<div className="stat-figure text-secondary">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								className="inline-block h-8 w-8 stroke-current"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
+									d="M13 10V3L4 14h7v7l9-11h-7z"
+								></path>
+							</svg>
+						</div>
+						<div className="stat-title">Page Views</div>
+						<div className="stat-value text-secondary">2.6M</div>
+						<div className="stat-desc">21% more than last month</div>
+					</div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+					<div className="stat">
+						<div className="stat-figure text-secondary">
+							<div className="online avatar">
+								<div className="w-16 rounded-full">
+									<Image
+										src={people}
+										alt="Picture of the author"
+										width={100}
+										height={100}
+									/>
+								</div>
+							</div>
+						</div>
+						<div className="stat-value">86%</div>
+						<div className="stat-title">Tasks done</div>
+						<div className="stat-desc text-secondary">31 tasks remaining</div>
+					</div>
+				</div>
+			</div>
+		</>
+	);
 }
